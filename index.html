@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><title>LOFT49 · 创意城市先行区</title>
+<style>
+:root{--bg:#f7f8f5;--blue:#0b3ea8;--ink:#25343b;--muted:#76828a;--line:#d9e0e1;--brick:#a94a34;--cyan:#54c8d3;--green:#82b784;--sun:#f3b83f;--wash:rgba(247,248,245,.94);font-family:"Segoe UI","Microsoft YaHei","PingFang SC",sans-serif;color-scheme:light}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink)}button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}button:focus-visible{outline:2px solid var(--blue);outline-offset:4px}body.dark{--bg:#111e40;--blue:#a2d9ff;--ink:#edf4ff;--muted:#aabbd7;--line:#304674;--wash:rgba(17,30,64,.95);color-scheme:dark}.page{max-width:1920px;min-height:100svh;margin:auto;display:flex;flex-direction:column;position:relative;overflow:hidden}.top{padding:28px 4.2vw 0;display:flex;justify-content:space-between;align-items:center;z-index:5}.brand{display:flex;align-items:center;gap:14px;color:var(--blue);font-size:12px;letter-spacing:.16em}.mark{height:29px;width:29px;border:2px solid var(--blue);display:grid;place-items:center;font-size:10px;font-weight:700}.brand small{display:block;color:var(--muted);font-size:8px;letter-spacing:.18em;margin-top:5px}.tools{display:flex;align-items:center;gap:8px}.tools button,.tools label{font-size:11px;padding:8px 10px}.tools label{display:flex;gap:6px;align-items:center}.tools input{accent-color:var(--blue)}.tools button:hover{background:color-mix(in srgb,var(--blue) 8%,transparent)}.stage{position:relative;flex:1;min-height:650px;display:flex;align-items:center}.scene{position:absolute;inset:0;width:100%;height:100%;touch-action:none;cursor:grab}.scene:active{cursor:grabbing}.model{transform-origin:610px 360px;transition:transform .4s ease}.copy{position:relative;z-index:2;width:380px;margin:0 0 22px 4.2vw;pointer-events:none}.copy>*{pointer-events:auto}.eyebrow{font-size:10px;color:var(--muted);letter-spacing:.1em;display:flex;gap:10px;align-items:center;margin-bottom:25px}.num{color:white;background:var(--blue);padding:4px 6px}.copy h1{font-size:clamp(38px,4vw,63px);line-height:1.14;font-weight:350;letter-spacing:-.05em;color:var(--blue);margin:0 0 14px}.en{font-size:10px;color:var(--muted);letter-spacing:.2em;margin:0 0 23px}.desc{font-size:12px;line-height:1.95;max-width:330px;margin:0}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;max-width:350px;border-top:1px solid var(--line);padding-top:15px;margin:27px 0 16px}.val{font-size:27px;line-height:1.2;color:var(--blue);white-space:nowrap}.unit{font-size:10px;margin-left:4px}.lab{font-size:9px;color:var(--muted);line-height:1.6;margin-top:6px}.detail{font-size:10px;color:var(--blue);letter-spacing:.06em;line-height:1.8;min-height:34px}.legend{display:flex;gap:14px;color:var(--muted);font-size:9px;margin-top:18px}.legend span{display:flex;align-items:center;gap:5px}.dot{width:6px;height:6px;border-radius:50%}.hint{font-size:9px;color:var(--muted);line-height:1.8;margin-top:21px}.badge{position:absolute;right:4.2vw;top:33px;font-size:9px;color:var(--muted);letter-spacing:.13em;z-index:2}.badge:before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--brick);margin-right:8px}.note{position:absolute;right:4.2vw;bottom:37px;color:var(--muted);font-size:9px;letter-spacing:.1em;z-index:3}.footer{padding:0 4.2vw 24px;z-index:4}.footnote{font-size:9px;line-height:1.8;color:var(--muted);margin:0 0 14px}.nav{display:flex;align-items:center;gap:17px;border-top:1px solid var(--line);padding-top:12px}.chapters{flex:1;display:flex;justify-content:space-between;gap:7px}.chapter{font-size:10px;padding:9px 0;color:var(--muted);white-space:nowrap;position:relative}.chapter b{font-size:9px;font-weight:400;margin-right:6px}.chapter[aria-current=step]{color:var(--blue)}.chapter[aria-current=step]:before{content:"";position:absolute;left:0;right:0;top:-13px;height:2px;background:var(--blue)}.arrows{display:flex}.arrows button{width:32px;height:32px;font-size:18px}.arrows button:disabled{opacity:.3}.progress{position:absolute;bottom:0;height:2px;left:0;right:0}.progress i{display:block;height:100%;background:var(--brick);width:0}.toast{position:fixed;z-index:8;bottom:25px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;padding:11px 18px;font-size:12px;opacity:0;transition:opacity .2s}.toast.show{opacity:1}.route{fill:none;stroke:var(--cyan);stroke-width:4;stroke-linecap:round;stroke-dasharray:8 7;opacity:0}.chapter-route .route,.chapter-public .route{opacity:.95;animation:flow 1.8s linear infinite}.lightbeam{opacity:0}.chapter-light .lightbeam{opacity:.38;animation:sweep 8s linear infinite}.node{opacity:0}.chapter-function .node,.chapter-public .node{opacity:1}.pulse{transform-box:fill-box;transform-origin:center;animation:pulse 1.5s ease-in-out infinite}@keyframes flow{to{stroke-dashoffset:-30}}@keyframes sweep{from{transform:translateX(-180px)}to{transform:translateX(180px)}}@keyframes pulse{50%{r:12;opacity:.4}}@media(max-width:1000px){.copy{width:310px}.copy h1{font-size:43px}.desc{max-width:275px}.stats{max-width:290px}.val{font-size:24px}.chapter{font-size:9px}}@media(max-width:680px){.top{padding:20px 6vw 0}.brand{font-size:10px;gap:10px}.brand small{font-size:7px}.tools{gap:0}.tools label{display:none}.tools button{padding:7px}.stage{min-height:820px;align-items:flex-start;flex:none}.copy{margin:38px 6vw 0;width:88vw}.copy>*{pointer-events:none}.eyebrow{font-size:9px;margin-bottom:19px}.copy h1{font-size:38px}.en{font-size:9px;margin-bottom:14px}.desc{font-size:11px;line-height:1.85;max-width:315px}.stats{margin:19px 0 10px;padding-top:12px;max-width:295px}.val{font-size:24px}.lab{font-size:8px}.detail{font-size:9px}.legend{font-size:8px;margin-top:14px}.hint{display:none}.badge{right:6vw;top:auto;bottom:42px;font-size:8px}.note{left:6vw;right:auto;bottom:34px;font-size:8px}.footer{padding:0 6vw 20px}.footnote{font-size:8px}.nav{gap:5px}.chapters{display:grid;grid-template-columns:repeat(4,1fr);gap:2px 9px}.chapter{font-size:9px;padding:7px 0}.chapter[aria-current=step]:before{top:0;height:1px}.chapter b{font-size:8px;margin-right:4px}.arrows button{width:25px}}@media(prefers-reduced-motion:reduce){.model,.tag{transition:none!important}.route,.pulse,.lightbeam{animation:none!important}}@media print{.tools,.nav,.note,.hint{display:none}.page{height:900px}.stage{min-height:750px}body{print-color-adjust:exact;-webkit-print-color-adjust:exact}}
+
+.scene{display:block}.scene:focus-visible{outline:2px solid var(--blue);outline-offset:-4px}.copy{pointer-events:none}.copy>*{pointer-events:none}.tools button{min-width:34px;min-height:36px}.tools button[aria-pressed=true]{color:var(--blue)}
+@media(max-width:680px){.brand small{max-width:170px;line-height:1.6}.tools #export{font-size:0}.tools #export:after{content:"↓";font-size:15px}.note{bottom:26px}.badge{bottom:51px}}
+
+.scene{display:block}.scene:focus-visible{outline:2px solid var(--blue);outline-offset:-4px}.copy{pointer-events:none}.copy>*{pointer-events:none}.tools button{min-width:34px;min-height:36px}.tools button[aria-pressed=true]{color:var(--blue)}
+@media(max-width:680px){.brand small{max-width:170px;line-height:1.6}.tools #export{font-size:0}.tools #export:after{content:"↓";font-size:15px}.note{bottom:26px}.badge{bottom:51px}}
+
+.scene{display:block}.scene:focus-visible{outline:2px solid var(--blue);outline-offset:-4px}.copy{pointer-events:none}.copy>*{pointer-events:none}.tools button{min-width:34px;min-height:36px}.tools button[aria-pressed=true]{color:var(--blue)}
+@media(max-width:680px){.brand small{max-width:170px;line-height:1.6}.tools #export{font-size:0}.tools #export:after{content:"↓";font-size:15px}.note{bottom:26px}.badge{bottom:51px}}
+@media(max-width:680px){.tools #numbers,.tools #plan{font-size:10px;padding:5px}.tools #reset{display:none}.brand small{max-width:135px;font-size:6px}}
+
+.scene{display:block}.scene:focus-visible{outline:2px solid var(--blue);outline-offset:-4px}.copy{pointer-events:none}.copy>*{pointer-events:none}.tools button{min-width:34px;min-height:36px}.tools button[aria-pressed=true]{color:var(--blue)}
+@media(max-width:680px){.brand small{max-width:170px;line-height:1.6}.tools #export{font-size:0}.tools #export:after{content:"↓";font-size:15px}.note{bottom:26px}.badge{bottom:51px}}
+@media(max-width:680px){.tools #numbers,.tools #plan{font-size:10px;padding:5px}.tools #reset{display:none}.brand small{max-width:135px;font-size:6px}}
+
+.scene{display:block}.scene:focus-visible{outline:2px solid var(--blue);outline-offset:-4px}.copy{pointer-events:none}.copy>*{pointer-events:none}.tools button{min-width:34px;min-height:36px}.tools button[aria-pressed=true]{color:var(--blue)}
+@media(max-width:680px){.brand small{max-width:170px;line-height:1.6}.tools #export{font-size:0}.tools #export:after{content:"↓";font-size:15px}.note{bottom:26px}.badge{bottom:51px}}
+@media(max-width:680px){.tools #numbers,.tools #plan{font-size:10px;padding:5px}.tools #reset{display:none}.brand small{max-width:135px;font-size:6px}}
+
+.scene{display:block}.scene:focus-visible{outline:2px solid var(--blue);outline-offset:-4px}.copy{pointer-events:none}.copy>*{pointer-events:none}.tools button{min-width:34px;min-height:36px}.tools button[aria-pressed=true]{color:var(--blue)}
+@media(max-width:680px){.brand small{max-width:170px;line-height:1.6}.tools #export{font-size:0}.tools #export:after{content:"↓";font-size:15px}.note{bottom:26px}.badge{bottom:51px}}
+@media(max-width:680px){.tools #numbers,.tools #plan{font-size:10px;padding:5px}.tools #reset{display:none}.brand small{max-width:135px;font-size:6px}}
+
+.scene{display:block}.scene:focus-visible{outline:2px solid var(--blue);outline-offset:-4px}.copy{pointer-events:none}.copy>*{pointer-events:none}.tools button{min-width:34px;min-height:36px}.tools button[aria-pressed=true]{color:var(--blue)}
+@media(max-width:680px){.brand small{max-width:170px;line-height:1.6}.tools #export{font-size:0}.tools #export:after{content:"↓";font-size:15px}.note{bottom:26px}.badge{bottom:51px}}
+@media(max-width:680px){.tools #numbers,.tools #plan{font-size:10px;padding:5px}.tools #reset{display:none}.brand small{max-width:135px;font-size:6px}}
+
+.scene{display:block}.scene:focus-visible{outline:2px solid var(--blue);outline-offset:-4px}.copy{pointer-events:none}.copy>*{pointer-events:none}.tools button{min-width:34px;min-height:36px}.tools button[aria-pressed=true]{color:var(--blue)}
+@media(max-width:680px){.brand small{max-width:170px;line-height:1.6}.tools #export{font-size:0}.tools #export:after{content:"↓";font-size:15px}.note{bottom:26px}.badge{bottom:51px}}
+@media(max-width:680px){.tools #numbers,.tools #plan{font-size:10px;padding:5px}.tools #reset{display:none}.brand small{max-width:135px;font-size:6px}}
+
+.scene{display:block}.scene:focus-visible{outline:2px solid var(--blue);outline-offset:-4px}.copy{pointer-events:none}.copy>*{pointer-events:none}.tools button{min-width:34px;min-height:36px}.tools button[aria-pressed=true]{color:var(--blue)}
+@media(max-width:680px){.brand small{max-width:170px;line-height:1.6}.tools #export{font-size:0}.tools #export:after{content:"↓";font-size:15px}.note{bottom:26px}.badge{bottom:51px}}
+@media(max-width:680px){.tools #numbers,.tools #plan{font-size:10px;padding:5px}.tools #reset{display:none}.brand small{max-width:135px;font-size:6px}}
+
+.scene{display:block}.scene:focus-visible{outline:2px solid var(--blue);outline-offset:-4px}.copy{pointer-events:none}.copy>*{pointer-events:none}.tools button{min-width:34px;min-height:36px}.tools button[aria-pressed=true]{color:var(--blue)}
+@media(max-width:680px){.brand small{max-width:170px;line-height:1.6}.tools #export{font-size:0}.tools #export:after{content:"↓";font-size:15px}.note{bottom:26px}.badge{bottom:51px}}
+@media(max-width:680px){.tools #numbers,.tools #plan{font-size:10px;padding:5px}.tools #reset{display:none}.brand small{max-width:135px;font-size:6px}}
+
+.scene{display:block}.scene:focus-visible{outline:2px solid var(--blue);outline-offset:-4px}.copy{pointer-events:none}.copy>*{pointer-events:none}.tools button{min-width:34px;min-height:36px}.tools button[aria-pressed=true]{color:var(--blue)}
+@media(max-width:680px){.brand small{max-width:170px;line-height:1.6}.tools #export{font-size:0}.tools #export:after{content:"↓";font-size:15px}.note{bottom:26px}.badge{bottom:51px}}
+@media(max-width:680px){.tools #numbers,.tools #plan{font-size:10px;padding:5px}.tools #reset{display:none}.brand small{max-width:135px;font-size:6px}}
+
+.scene{display:block}.scene:focus-visible{outline:2px solid var(--blue);outline-offset:-4px}.copy{pointer-events:none}.copy>*{pointer-events:none}.tools button{min-width:34px;min-height:36px}.tools button[aria-pressed=true]{color:var(--blue)}
+@media(max-width:680px){.brand small{max-width:170px;line-height:1.6}.tools #export{font-size:0}.tools #export:after{content:"↓";font-size:15px}.note{bottom:26px}.badge{bottom:51px}}
+</style></head><body><main class="page" id="page"><header class="top"><div class="brand"><span class="mark">49</span><span>LOFT49<small>CREATIVE CITY PIONEER ZONE · HANGZHOU</small></span></div><div class="tools"><label><input id="auto" type="checkbox">自动播放</label><button id="numbers" aria-label="显示或隐藏楼号" aria-pressed="true">楼号</button><button id="plan" aria-label="切换平面视角" aria-pressed="false">平面</button><button id="reset" title="复位视角">↺</button><button id="theme" title="切换明暗">◐</button><button id="export">↓ 导出海报</button><button id="full">⛶</button></div></header><section class="stage" aria-label="LOFT49交互三维信息图"><canvas class="scene" id="scene" role="img" aria-label="LOFT49概念三维园区模型，可拖动旋转与缩放"></canvas><div class="badge">HANGZHOU · HANGYIN ROAD 49</div><article class="copy" aria-live="polite"><div class="eyebrow"><span class="num" id="num">00</span><span id="eye"></span></div><h1 id="title"></h1><p class="en" id="en"></p><p class="desc" id="desc"></p><div class="stats" id="stats"></div><div class="detail" id="detail"></div><div class="legend"><span><i class="dot" style="background:#a94a34"></i>工业核心</span><span><i class="dot" style="background:#c84d42"></i>人流主线</span><span><i class="dot" style="background:#f3b83f"></i>日照理念</span></div><p class="hint">拖曳旋转 · 滚轮缩放<br>← → 切换章节 · 空格播放 · F 全屏</p></article><div class="note">拖动旋转 · 概念体块还原</div></section><footer class="footer"><p class="footnote">LOFT49 · 杭州创意综合体｜模型按所提供的1#—12#示意图与效果图重构；5#A、5#B分别建模。未标注尺寸、层高与细部按图估算，动画用于设计理念表达。<br>空间信息图 / 2026.10 · 视觉研究参考：板桥站基地环境分析</p><nav class="nav" aria-label="信息图章节"><div class="chapters" id="chapters"></div><div class="arrows"><button id="prev" aria-label="上一章节">←</button><button id="next" aria-label="下一章节">→</button></div></nav></footer><div class="progress"><i id="bar"></i></div></main><div id="toast" class="toast"></div>
+<script>
+(()=>{'use strict';
+const $=id=>document.getElementById(id),data=[
+  [
+    "总览",
+    "杭州 LOFT49 · 12幢建筑组团",
+    "12幢建筑<br>一座创意<br>发生地",
+    "LOFT49 · A CAMPUS OF CREATIVE LIFE",
+    "两列办公建筑围绕红砖工业核心展开。1#与5#形成两端的高点，6#、10#和连桥把屋顶花园、庭院与展演空间串联起来。",
+    [
+      [
+        "12",
+        "幢",
+        "按示意图楼号"
+      ],
+      [
+        "A / B",
+        "",
+        "5#高低组合"
+      ],
+      [
+        "6 / 10",
+        "#",
+        "中央工业核心"
+      ]
+    ],
+    "1#—12# 编号复原 · 5#A / 5#B 分别建模",
+    ""
+  ],
+  [
+    "文脉",
+    "01 文脉 · 工业记忆的空间延续",
+    "红砖厂房<br>成为新的<br>公共核心",
+    "MEMORY · INDUSTRIAL COURTYARDS",
+    "LOFT49 延续杭印路49号的工业与创意文脉。在这份方案中，6#和10#以低层红砖体量、屋顶庭院与连桥连接新建办公组团。",
+    [
+      [
+        "1958",
+        "年",
+        "折页中的工业起点"
+      ],
+      [
+        "2003",
+        "年",
+        "LOFT49创意聚集"
+      ],
+      [
+        "6 / 10",
+        "#",
+        "工业建筑核心"
+      ]
+    ],
+    "品牌历史依据介绍折页 · 空间依据所提供方案图",
+    ""
+  ],
+  [
+    "体量",
+    "02 体量 · 从逐栋建筑到完整街区",
+    "两侧组团<br>围绕一颗<br>工业之心",
+    "MASSING · TWELVE NUMBERED BUILDINGS",
+    "按公开摘要的建筑面积与层数，把 1#—12# 体量分成四组：1#、5#A 为高容量体量；5#B、7# 为中容量体量；2#—4#、11#、12# 为标准办公体量；8#、9# 为小体量。6#、10# 保留红砖工业核心色。",
+    [
+      [
+        "12,600",
+        "㎡",
+        "1#高容量"
+      ],
+      [
+        "23,200",
+        "㎡",
+        "5#A高容量"
+      ],
+      [
+        "1,440",
+        "㎡",
+        "2#—4#标准"
+      ],
+      [
+        "2,800",
+        "㎡",
+        "8#小体量"
+      ]
+    ],
+    "体量色谱对应公开摘要的面积与层数；本章显示每栋楼的容量提示",
+    ""
+  ],
+  [
+    "公共轴",
+    "03 公共轴 · 厂房、连桥与庭院",
+    "沿着街巷<br>走进工业<br>花园",
+    "CONNECTION · BRIDGES & COURTS",
+    "10#的长条屋顶庭院通过连桥连接6#。地面街巷从入口广场进入，在下沉广场、工业院落与两侧办公楼之间形成连续的步行联系。",
+    [
+      [
+        "10 → 6",
+        "#",
+        "连桥联系"
+      ],
+      [
+        "屋顶",
+        "",
+        "工业花园"
+      ],
+      [
+        "地面",
+        "",
+        "街巷与下沉广场"
+      ]
+    ],
+    "青蓝色展示公共联系 · 路径为关系示意",
+    ""
+  ],
+  [
+    "功能",
+    "04 功能 · 创意生产与城市展演",
+    "工作与展演<br>在同一个<br>街区相遇",
+    "PROGRAMME · WORK / EXHIBIT / SHOW",
+    "办公组团为创意生产提供不同尺度的空间，中央工业建筑承载展演与共享活动。商业与公共活动沿街巷展开，把产、展、商、秀、集连成日常。",
+    [
+      [
+        "办公",
+        "",
+        "分散的创意组团"
+      ],
+      [
+        "展演",
+        "",
+        "红砖公共核心"
+      ],
+      [
+        "共享",
+        "",
+        "屋顶与街巷空间"
+      ]
+    ],
+    "功能色彩用于设计叙事 · 不对应具体租户或楼层",
+    ""
+  ],
+  [
+    "日照",
+    "05 日照 · 让花园回到屋顶",
+    "在厂房上<br>种下一片<br>天空",
+    "DAYLIGHT · GARDENS ABOVE THE FACTORY",
+    "效果图中的10#屋顶庭院保留红砖边界，并以树木、开放天空和天窗引入自然光。动态光束、屋顶高光与建筑投影一起表现日照在园区中的移动。",
+    [
+      [
+        "10",
+        "#",
+        "长条屋顶花园"
+      ],
+      [
+        "6",
+        "#",
+        "红砖开放院落"
+      ],
+      [
+        "天光",
+        "",
+        "连桥与中庭"
+      ]
+    ],
+    "黄色光束、动态阴影与屋顶高光表达采光理念 · 非工程日照分析",
+    ""
+  ],
+  [
+    "动线",
+    "06 动线 · 从城市入口到每一栋楼",
+    "多条街巷<br>织成一张<br>步行网络",
+    "MOVEMENT · A WALKABLE CREATIVE CAMPUS",
+    "从东南侧地铁入口进入，沿右侧边界抵达中央广场，再沿红色主轴线向左上穿入街巷与工业庭院。灰色外围路径把各个入口和公共空间串联起来。",
+    [
+      [
+        "入口",
+        "",
+        "1#与12#之间"
+      ],
+      [
+        "街巷",
+        "",
+        "绕行工业核心"
+      ],
+      [
+        "连桥",
+        "",
+        "6#与10#相接"
+      ]
+    ],
+    "红色实线为人流主线 · 灰色虚线为外围串联 · 小人为人流示意",
+    ""
+  ],
+  [
+    "结语",
+    "07 结语 · 园区记忆，优质街区",
+    "十二栋建筑<br>共同书写<br>城市更新",
+    "LOFT49 · MEMORY MEETS A NEW CITY",
+    "圆角高楼、独立办公楼、红砖厂房与屋顶花园，组成可工作、可漫游、可相遇的创意街区。不同尺度的建筑，共享一段城市生活。",
+    [
+      [
+        "旧",
+        "MEMORY",
+        "红砖工业记忆"
+      ],
+      [
+        "新",
+        "IDEA",
+        "创意办公组团"
+      ],
+      [
+        "共",
+        "CITY",
+        "连接与公共生活"
+      ]
+    ],
+    "模型按所提供的示意图与效果图进行比例还原",
+    ""
+  ]
+];
+const canvas=$('scene'),ctx=canvas.getContext('2d'),reduced=matchMedia('(prefers-reduced-motion: reduce)');
+let index=0,dark=false,auto=false,drag=null,raf=0,start=performance.now(),W=1,H=1;
+const camera={yaw:-.69,pitch:.64,zoom:1},target={...camera};
+const views=[[-.69,.64,1],[-.64,.76,1],[-.69,.73,1],[-.62,.94,1],[-.69,.76,1],[-.69,.64,1],[-.69,1.12,.95],[-.69,.64,1]];
+let showNumbers=true,planMode=false;
+const palette={brick:'#b5533b',glass:'#b8e2e4',green:'#98c690',ground:'#e8eee8',cyan:'#42c7d9',blue:'#164ad5',sun:'#ffbe38'};
+const faces=[],lines=[],buildings=[];
+function face(points,color,tag='context',normal=null){let middle=points.reduce((s,p)=>s.map((v,i)=>v+p[i]/points.length),[0,0,0]);faces.push({points,color,tag,normal,middle})}
+function plane(x,z,w,d,y,color,tag='context'){let nx=y>0?Math.ceil(w/10):1,nz=y>0?Math.ceil(d/10):1;for(let i=0;i<nx;i++)for(let j=0;j<nz;j++){let x0=x-w/2+w*i/nx,x1=x-w/2+w*(i+1)/nx,z0=z-d/2+d*j/nz,z1=z-d/2+d*(j+1)/nz;face([[x0,y,z0],[x1,y,z0],[x1,y,z1],[x0,y,z1]],color,tag,[0,1,0])}}
+function box(x,z,w,d,h,color,tag='context',y=0){let a=x-w/2,b=x+w/2,c=z-d/2,e=z+d/2;face([[a,y,c],[b,y,c],[b,y+h,c],[a,y+h,c]],color,tag,[0,0,-1]);face([[b,y,c],[b,y,e],[b,y+h,e],[b,y+h,c]],color,tag,[1,0,0]);face([[b,y,e],[a,y,e],[a,y+h,e],[b,y+h,e]],color,tag,[0,0,1]);face([[a,y,e],[a,y,c],[a,y+h,c],[a,y+h,e]],color,tag,[-1,0,0]);plane(x,z,w,d,y+h,color,tag)}
+function outline(x,z,w,d,r=0){let points=[];for(let [cx,cz,angle]of [[x+w/2-r,z+d/2-r,0],[x-w/2+r,z+d/2-r,Math.PI/2],[x-w/2+r,z-d/2+r,Math.PI],[x+w/2-r,z-d/2+r,Math.PI*1.5]]){for(let j=0;j<=3;j++){let a=angle+j*Math.PI/6;points.push([cx+r*Math.cos(a),cz+r*Math.sin(a)])}}return points}
+function shell(out,y,h,col,tag){for(let i=0;i<out.length;i++){let a=out[i],b=out[(i+1)%out.length],dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz);if(len<.001)continue;face([[a[0],y,a[1]],[b[0],y,b[1]],[b[0],y+h,b[1]],[a[0],y+h,a[1]]],col,tag,[dz/len,0,-dx/len])}face(out.map(q=>[q[0],y+h,q[1]]),col,tag,[0,1,0])}
+function building(x,z,w,d,h,levels,id,kind='small',radius=1){const tag='building'+id;buildings.push({x,z,w,d,h:h+3.2,id,kind});let out=outline(x,z,w,d,radius);shell(out,0,1.4,'#c66a55',tag);
+// Subdivide facades into windows so their depth remains correct at oblique angles.
+for(let j=0;j<out.length;j++){let a=out[j],b=out[(j+1)%out.length],dx=b[0]-a[0],dz=b[1]-a[1],len=Math.hypot(dx,dz);if(len<.1)continue;let nx=dz/len,nz=-dx/len,count=Math.max(1,Math.round(len/2.7));function pane(lo,hi,y0,y1,col){face([[a[0]+dx*lo,y0,a[1]+dz*lo],[a[0]+dx*hi,y0,a[1]+dz*hi],[a[0]+dx*hi,y1,a[1]+dz*hi],[a[0]+dx*lo,y1,a[1]+dz*lo]],col,tag,[nx,0,nz])}for(let f=0;f<levels;f++)for(let k=0;k<count;k++){let l=k/count,r=(k+1)/count,lo=(k+.16)/count,hi=(k+.84)/count,base=1.4+f*(h-1.4)/levels,top=1.4+(f+1)*(h-1.4)/levels,y0=base+(top-base)*.13,y1=base+(top-base)*.88;
+pane(lo,hi,y0,y1,(k+f)%5===0?'#b45b4b':'#974b43');pane(l,lo,base,top,'#eee2d7');pane(hi,r,base,top,'#d8c5b8');pane(lo,hi,base,y0,'#c9826e');pane(lo,hi,y1,top,'#f0e6dc');}}
+shell(outline(x,z,w+.3,d+.3,radius),h,3.2,'#f1eee7',tag);plane(x,z,w*.84,d*.81,h+3.25,kind==='tower'?'#7e9d72':'#a98b58',tag);box(x,z,Math.min(17,w*.58),7,.8,kind==='tower'?'#6c8a62':'#96764d',tag,h+3.3);
+if(id==='1'||id==='5A')box(x-w*.18,z+d*.25,9,3,2.1,'#bdc7bd',tag,h+3.25);
+}
+function tree(x,z,y=0,pink=false,r=2){box(x,z,.5,.5,3,'#977d66','tree',y);let ring=Array.from({length:6},(_,i)=>[x+r*Math.cos(i/6*Math.PI*2),y+3.5,z+r*Math.sin(i/6*Math.PI*2)]);for(let i=0;i<6;i++)face([ring[i],ring[(i+1)%6],[x,y+6.5,z]],pink?'#e5bdc3':'#91bba0','tree');}
+// User's numbered axonometric is the source of truth: 1–12, with 5 split A / B.
+plane(-9,8,321,208,-3,'#edf0e8');box(-9,8,321,208,2,'#dde3dc','context',-5);plane(-9,103,321,10,-2.5,'#dce2df');plane(-9,-86,321,10,-2.5,'#dce2df');plane(-158,8,9,196,-2.5,'#dce2df');plane(-4,5,284,167,-2,'#f1f1e9','court');
+const modelSpec=[
+[-118,-43,37,39,39,8,'1','tower',5],[-72,-44,30,28,20,4,'2'],[-29,-44,30,29,23,4,'3'],[14,-44,30,29,26,5,'4'],[74,-37,47,40,72,14,'5A','tower',2],[79,14,48,36,36,7,'5B','tower',1.5],
+[78,65,47,29,27,5,'7'],[25,59,34,30,25,4,'8'],[-23,56,33,29,22,4,'9'],[-70,56,33,28,19,4,'11'],[-116,56,32,27,16,3,'12']];
+modelSpec.forEach(s=>building(...s));
+function industrial10(){let x=-74,z=5,w=101,d=39;buildings.push({x,z,w,d,h:17,id:'10',kind:'heritage'});box(x,z,w,d,8,'#ab7c62','heritage10');for(let xx=x-w/2+2;xx<x+w/2;xx+=5){box(xx,z+d/2+.12,3.9,.25,5.8,'#a6bbb9','heritage10',1);box(xx,z-d/2-.12,3.9,.25,5.8,'#a6bbb9','heritage10',1)}
+plane(x,z,w-5,d-5,13.1,'#d6c5b0','heritage10');box(x,z-d/2+3,w,6,8.5,'#b96246','heritage10',8);box(x,z+d/2-3,w,6,8.5,'#b96246','heritage10',8);box(x-w/2+3,z,6,d,8.5,'#b96246','heritage10',8);box(x+w/2-3,z,6,d,8.5,'#b96246','heritage10',8);
+for(let xx of[-107,-41]){plane(xx,z,21,19,13.2,'#bad0ad','heritage10');for(let [ox,oz]of[[-5,-3],[4,2]])tree(xx+ox,z+oz,13.4,true,2.2)}
+box(-74,z,23,20,2.8,'#b16b54','heritage10',13.1);plane(-74,z,19,15,16,'#d2d8cb','heritage10');for(let xx=-82;xx<=-65;xx+=3)lines.push({p:[[xx,16.1,z-7],[xx,16.1,z+7]],color:'#aa927d'});for(let zz=z-6;zz<=z+6;zz+=3)lines.push({p:[[-83,16.1,zz],[-65,16.1,zz]],color:'#aa927d'});
+box(-73,z,17,7,.6,'#a05d48','heritage10',16.8);
+}
+function industrial6(){let x=30,z=9,w=49,d=38;buildings.push({x,z,w,d,h:24,id:'6',kind:'heritage'});box(x,z,w,d,13,'#b8876e','heritage6');plane(x,z,w-5,d-5,13.1,'#d1c6af','heritage6');box(x,z-d/2+3,w,6,9,'#b56248','heritage6',13);box(x+w/2-3,z,6,d,9,'#b56248','heritage6',13);box(x-w/2+3,z,6,d,9,'#b56248','heritage6',13);box(x+9,z+12,31,7,5,'#b56248','heritage6',13);box(x-12,z+3,12,19,4.5,'#c8d1c5','heritage6',13);plane(x+8,z+1,17,16,13.2,'#afcba7','heritage6');tree(x+5,z+1,13.3,true,1.9);tree(x+12,z+7,13.3,true,1.9);box(x,z-7,16,6,.6,'#a26049','heritage6',23);
+// A small industrial tower/chimney is visible in the supplied rendering.
+box(x+12,z-10,5,5,29,'#96664d','heritage6');box(x+12,z-10,6,6,1,'#ddd0b8','heritage6',29);
+}
+industrial10();industrial6();
+// Bridge and glazed atrium occupy the gap between 10 and 6, not a separate linear block.
+box(-9,6,28,8,2,'#bc6a4c','bridge',10);box(-9,6,28,8,2.6,'#acd1d1','bridge',12);box(-9,6,28,8,1,'#b66b51','bridge',14.6);for(let xx=-22;xx<=4;xx+=5)box(xx,10,.6,.4,4.5,'#60483c','bridge',10);
+plane(-10,-1,29,31,.1,'#d6e7db','atrium');for(let xx=-20;xx<=0;xx+=8){box(xx,-11,.5,.5,13,'#879a96','bridge');lines.push({p:[[xx,14,-13],[xx,14,9]],color:'#a1bbba'})}
+face([[-25,14,-13],[5,14,-13],[5,14,9],[-25,14,9]],'#c6e4e0','atrium',[0,1,0]);
+plane(-143,3,17,35,-.5,'#e3e5db','plaza');plane(-139,49,17,37,-.5,'#d3decb','plaza');plane(-59,30,73,12,-.5,'#dce8de','plaza');
+plane(-6,29,19,20,-1.4,'#d8cab4','sunken');box(-6,29,19,1.4,.6,'#eae4d7','sunken',-.8);for(let i=0;i<4;i++)box(-6,18+i*.95,20,1.1,.25,'#d0c3ad','sunken',-.2-i*.3);
+for(let x=-133;x<=112;x+=15)tree(x,-73);for(let x=-137;x<=112;x+=16)tree(x,94);for(let z=-49;z<=73;z+=17)tree(-145,z);for(let [x,z]of[[-98,29],[-53,30],[47,33],[-4,-22],[107,40],[63,89]])tree(x,z);
+for(let [x,z]of[[-106,30],[-46,31],[51,34]])box(x,z,9,2,1.2,'#dcb875','seat');
+const route=[[112,1,82],[112,1,57],[105,1,40],[78,1,27],[55,1,27],[55,1,5],[35,1,-14],[12,1,-28],[-12,1,-28],[-36,1,-40],[-66,1,-30]];
+const routeLoop=[[112,1,82],[124,1,82],[124,1,-65],[-128,1,-65],[-128,1,-53],[-75,1,-53],[-36,1,-40]];
+function routePoint(path,u){let p=Math.max(0,Math.min(.999999,u))*(path.length-1),i=Math.floor(p),f=p-i,a=path[i],b=path[Math.min(path.length-1,i+1)];return a.map((v,j)=>v+(b[j]-v)*f)}
+function drawPerson(c,p,size,color,phase){let bob=Math.sin(phase)*size*.08,s=Math.max(3.8,size);c.save();c.translate(p[0],p[1]-bob);c.strokeStyle=color;c.fillStyle=color;c.lineWidth=Math.max(.7,s*.12);c.lineCap='round';c.beginPath();c.arc(0,-s*.62,s*.16,0,Math.PI*2);c.fill();c.beginPath();c.moveTo(0,-s*.42);c.lineTo(0,s*.08);c.moveTo(0,-s*.24);c.lineTo(-s*.24,s*.02);c.moveTo(0,-s*.24);c.lineTo(s*.24,s*.02);c.moveTo(0,s*.08);c.lineTo(-s*.2,s*.42);c.moveTo(0,s*.08);c.lineTo(s*.2,s*.42);c.stroke();c.restore()}
+function drawRouteArrow(c,t,from,to,color){let a=t(from),b=t(to),ang=Math.atan2(b[1]-a[1],b[0]-a[0]),len=8;c.save();c.translate(b[0],b[1]);c.rotate(ang);c.fillStyle=color;c.beginPath();c.moveTo(0,0);c.lineTo(-len,-len*.55);c.lineTo(-len,len*.55);c.closePath();c.fill();c.restore()}
+function drawSunShadows(c,t,sunX,sunZ){c.save();c.globalAlpha=dark?.34:.24;c.fillStyle=dark?'#34415f':'#5f686d';for(let b of buildings){if(b.kind==='heritage'&&b.id==='10')continue;let x0=b.x-b.w/2,z0=b.z-b.d/2,x1=b.x+b.w/2,z1=b.z+b.d/2,shift=Math.min(115,b.h*.9),dx=b.x-sunX,dz=b.z-sunZ,len=Math.hypot(dx,dz)||1,ex=dx/len*shift,ez=dz/len*shift;for(let [a,bp] of [[[x0,z0],[x1,z0]],[[x1,z0],[x1,z1]],[[x1,z1],[x0,z1]],[[x0,z1],[x0,z0]]]){let poly=[t([a[0],.05,a[1]]),t([bp[0],.05,bp[1]]),t([bp[0]+ex,.05,bp[1]+ez]),t([a[0]+ex,.05,a[1]+ez])];path(c,poly);c.fill()}}c.restore()}
+const volumePalette={'1':'#e2b84b','5A':'#e2b84b','5B':'#9eaa59','7':'#9eaa59','8':'#49a9c5','9':'#49a9c5','2':'#6f93c6','3':'#6f93c6','4':'#6f93c6','11':'#6f93c6','12':'#6f93c6','6':'#b85b45','10':'#b85b45'};
+const capacityInfo={'1':['12,600㎡','约 9 层'],'2':['1,440㎡','约 4 层'],'3':['1,440㎡','约 4 层'],'4':['1,440㎡','约 4 层'],'5A':['23,200㎡','约 14 层'],'5B':['4,100㎡','约 7 层'],'7':['5,440㎡','约 5 层'],'8':['2,800㎡','约 4 层'],'9':['2,700㎡','约 4 层'],'11':['1,650㎡','约 4 层'],'12':['1,650㎡','约 4 层'],'6':['工业展演','低层'],'10':['3,000㎡','展演']};
+const labels=[[],[['10# · 红砖展演厂房',[-74,18,6]],['6# · 工业庭院',[30,26,9]]],[['体量按面积分组',[74,78,-37]],['高容量 · 1# / 5#A',[-118,44,-43]]],[['10# → 连桥 → 6#',[-10,17,6]],['下沉广场',[-6,1,29]]],[['办公组团',[25,31,59]],['展演核心 · 10#',[-74,18,6]]],[['10# · 屋顶工业花园',[-104,15,5]],['玻璃中庭 · 天光入口',[-10,16,-1]]],[['地铁入口 · 人流进入',[112,1,82]],['中央广场 · 轴线转折',[35,1,-14]]],[]];
+function rgba(hex,k=1,alpha=1){let a=[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16));if(dark)a=a.map((v,i)=>v*.64+[14,20,26][i]);return`rgba(${a.map(v=>Math.round(Math.min(255,v*k))).join(',')},${alpha})`}
+function projector(w,h,poster=false){let mobile=w<681&&!poster,cy=Math.cos(camera.yaw),sy=Math.sin(camera.yaw),sp=Math.sin(camera.pitch),cp=Math.cos(camera.pitch),scale=(mobile?Math.min(w/327,(h-445)/244):Math.min(w/575,h/285))*camera.zoom,ox=mobile?w*.51:w*.695,oy=mobile?Math.min(h-115,672):h*.59;
+return {scale,mobile,t:q=>{let rx=q[0]*cy-q[2]*sy,rz=q[0]*sy+q[2]*cy;return[ox+rx*scale,oy+(rz*sp-q[1]*cp)*scale,rz*cp+q[1]*sp]},eye:[sy*cp,sp,cy*cp]}}
+function path(c,pts){c.beginPath();pts.forEach((p,i)=>i?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1]));c.closePath()}
+function draw(c,w,h,time=0,poster=false){c.fillStyle=dark?'#111e40':'#f7f8f5';c.fillRect(0,0,w,h);const {scale,mobile,t,eye}=projector(w,h,poster);let sunT=index===5?(reduced.matches?.48:(time%9000)/9000):.48,sunX=-145+265*sunT,sunZ=108-35*sunT;let sorted=faces.filter(f=>!f.normal||f.normal.reduce((v,x,i)=>v+x*eye[i],0)>.005).map(f=>({f,ground:f.points.every(q=>q[1]<=0),z:t(f.middle)[2],p:f.points.map(t)})).sort((a,b)=>Number(b.ground)-Number(a.ground)||a.z-b.z);
+let shadowDrawn=false;for(let {f,p,ground}of sorted){if(index===5&&!ground&&!shadowDrawn){drawSunShadows(c,t,sunX,sunZ);shadowDrawn=true}let col=f.color;if(index===4&&f.tag.startsWith('building'))col=['1','5A','5B'].includes(f.tag.slice(8))?'#8eadce':'#73c4bc';if(index===2&&f.tag.startsWith('building'))col=volumePalette[f.tag.slice(8)]||col;if(index===4&&f.tag==='heritage10')col='#ee9960';if(index===4&&f.tag==='heritage6')col='#dbaa79';if(index===1&&f.tag.startsWith('building'))col='#c4ccc4';let k=f.normal?(.79+.22*Math.max(0,f.normal[1])+.09*f.normal[0]-.04*f.normal[2]):.92;if(index===5&&f.normal){let dx=sunX-f.middle[0],dy=90-f.middle[1],dz=sunZ-f.middle[2],dl=Math.hypot(dx,dy,dz)||1;k+=.2*Math.max(0,(f.normal[0]*dx+f.normal[1]*dy+f.normal[2]*dz)/dl)}path(c,p);c.fillStyle=rgba(col,k);c.fill();c.strokeStyle=rgba(col,k);c.lineWidth=.32;c.stroke()}
+for(let l of lines){let p=l.p.map(t);c.beginPath();c.moveTo(p[0][0],p[0][1]);c.lineTo(p[1][0],p[1][1]);c.strokeStyle=rgba(l.color);c.lineWidth=.6;c.stroke()}
+if([3,4,6].includes(index)){let pts=route.map(t);c.beginPath();pts.forEach((p,i)=>i?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1]));c.strokeStyle=rgba('#c84d42',.92);c.lineWidth=4.6;c.setLineDash([]);c.lineDashOffset=reduced.matches?0:-time/125;c.stroke();c.setLineDash([]);let loop=routeLoop.map(t);c.beginPath();loop.forEach((p,i)=>i?c.lineTo(p[0],p[1]):c.moveTo(p[0],p[1]));c.strokeStyle=rgba('#686d70',.52);c.lineWidth=1.4;c.setLineDash([2,6]);c.lineDashOffset=reduced.matches?0:time/145;c.stroke();c.setLineDash([]);drawRouteArrow(c,t,route[route.length-2],route[route.length-1],rgba('#c84d42',.95));drawRouteArrow(c,t,route[2],route[3],rgba('#c84d42',.95));let u=reduced.matches?.5:(time%7200)/7200;for(let j=0;j<24;j++){let pos=(u+j/24)%1,q=t(routePoint(route,pos)),lane=(j%3-1)*1.9;drawPerson(c,[q[0]+lane,q[1]-2.5],Math.max(7,scale*6.2),j%4===0?rgba('#e16b54',.95):rgba('#7e8b8d',.92),time/210+j)}}
+if(index===5){let a=sunT,x=sunX;let ray=[[x-14,0,-70],[x+20,0,-70],[x+22,76,73],[x-8,76,73]].map(t);path(c,ray);c.fillStyle=rgba(palette.sun,1,.18);c.fill();let sun=t([x,92,sunZ]);let glow=c.createRadialGradient(sun[0],sun[1],2,sun[0],sun[1],26);glow.addColorStop(0,rgba('#fff6c7',.95,.95));glow.addColorStop(1,rgba(palette.sun,0,.0));c.fillStyle=glow;c.beginPath();c.arc(sun[0],sun[1],26,0,Math.PI*2);c.fill();c.fillStyle=palette.sun;c.beginPath();c.arc(sun[0],sun[1],8,0,Math.PI*2);c.fill()}
+if(showNumbers){for(let b of buildings){let labelPoint=[b.x,b.h+.95,b.z],q=t(labelPoint);c.save();c.translate(q[0],q[1]);c.transform(Math.cos(camera.yaw),Math.sin(camera.yaw)*Math.sin(camera.pitch),-Math.sin(camera.yaw),Math.cos(camera.yaw)*Math.sin(camera.pitch),0,0);c.fillStyle=dark?'#edf7ec':'#fffdf4';c.font=`600 ${Math.max(10,scale*4.0)}px Segoe UI`;c.textAlign='center';c.textBaseline='middle';c.fillText(b.id==='5A'?'5#A':b.id==='5B'?'5#B':b.id+'#',0,0);c.restore()}}
+if(index===2&&!poster){for(let b of buildings){let info=capacityInfo[b.id];if(!info)continue;let q=t([b.x,b.h+3.8,b.z]),x=Math.max(w*.39,Math.min(w-220,q[0]+9)),y=Math.max(36,Math.min(h-48,q[1]-10));c.fillStyle=dark?'rgba(17,30,64,.9)':'rgba(247,248,245,.94)';c.fillRect(x,y,132,29);c.fillStyle=volumePalette[b.id]||palette.blue;c.fillRect(x,y,4,29);c.fillStyle=dark?'#edf7ec':'#22343c';c.font='600 9px Segoe UI,Microsoft YaHei';c.fillText((b.id==='5A'?'5#A':b.id==='5B'?'5#B':b.id+'#')+'  '+info[0],x+10,y+12);c.fillStyle=dark?'#aabbd7':'#76828a';c.font='8px Segoe UI,Microsoft YaHei';c.fillText(info[1],x+10,y+23)}let lx=Math.max(w*.41,Math.min(w-205,w*.76)),ly=34;c.fillStyle=dark?'rgba(17,30,64,.9)':'rgba(247,248,245,.95)';c.fillRect(lx,ly,190,49);c.font='600 9px Microsoft YaHei';c.fillStyle=dark?'#edf7ec':'#22343c';c.fillText('体量色谱 · 公开摘要',lx+10,ly+14);[['#e2b84b','高容量'],['#9eaa59','中容量'],['#6f93c6','标准办公'],['#49a9c5','小体量']].forEach((it,i)=>{c.fillStyle=it[0];c.fillRect(lx+10+i*44,ly+23,8,8);c.fillStyle=dark?'#aabbd7':'#76828a';c.font='7px Microsoft YaHei';c.fillText(it[1],lx+20+i*44,ly+30)})}
+if(!mobile){let fog=c.createLinearGradient(w*.22,0,w*.44,0);fog.addColorStop(0,dark?'rgba(17,30,64,1)':'rgba(247,248,245,1)');fog.addColorStop(1,dark?'rgba(17,30,64,0)':'rgba(247,248,245,0)');c.fillStyle=fog;c.fillRect(0,0,w*.44,h)}
+if(!poster){for(let [text,q]of labels[index]){let point=t(q),x=Math.max(mobile?12:w*.4,Math.min(w-195,point[0]+10)),y=Math.max(mobile?450:30,Math.min(h-60,point[1]-22));c.font='10px Microsoft YaHei, sans-serif';let tw=c.measureText(text).width;c.fillStyle=dark?'rgba(17,30,64,.92)':'rgba(247,248,245,.94)';c.fillRect(x,y,tw+18,26);c.fillStyle=rgba(palette.cyan);c.fillRect(x,y,2,26);c.fillStyle=dark?'#a2d9ff':'#0b3ea8';c.fillText(text,x+9,y+17)}}
+}
+function invalidate(){if(!raf)raf=requestAnimationFrame(tick)}
+function tick(time){raf=0;let diff=0;for(let k of ['yaw','pitch','zoom']){let d=target[k]-camera[k];diff+=Math.abs(d);camera[k]+=d*(reduced.matches?1:.12)}draw(ctx,W,H,time);if(auto&&!drag){let p=(time-start)/11000;$('bar').style.width=Math.min(100,p*100)+'%';if(p>=1)change((index+1)%data.length)}if(diff>.001||auto||(!reduced.matches&&[3,4,5,6].includes(index)))invalidate()}
+function change(i){index=Math.max(0,Math.min(data.length-1,i));let d=data[index];$('num').textContent=String(index).padStart(2,'0');$('eye').textContent=d[1];$('title').innerHTML=d[2];$('en').textContent=d[3];$('desc').textContent=d[4];$('stats').innerHTML=d[5].map(a=>'<div><div class="val">'+a[0]+'<span class="unit">'+a[1]+'</span></div><div class="lab">'+a[2]+'</div></div>').join('');$('detail').textContent=d[6];$('prev').disabled=index===0;$('next').disabled=index===data.length-1;document.querySelectorAll('.chapter').forEach((b,j)=>j===index?b.setAttribute('aria-current','step'):b.removeAttribute('aria-current'));[target.yaw,target.pitch,target.zoom]=views[index];planMode=false;$('plan').setAttribute('aria-pressed','false');start=performance.now();$('bar').style.width='0';invalidate()}
+data.forEach((d,i)=>{let b=document.createElement('button');b.className='chapter';b.innerHTML='<b>'+String(i).padStart(2,'0')+'</b>'+d[0];b.onclick=()=>change(i);$('chapters').append(b)});
+$('prev').onclick=()=>change(index-1);$('next').onclick=()=>change(index+1);$('reset').onclick=()=>change(index);
+$('numbers').onclick=()=>{showNumbers=!showNumbers;$('numbers').setAttribute('aria-pressed',String(showNumbers));invalidate()};
+$('plan').onclick=()=>{planMode=!planMode;$('plan').setAttribute('aria-pressed',String(planMode));target.pitch=planMode?1.54:views[index][1];target.yaw=planMode?0:views[index][0];invalidate()};
+$('theme').setAttribute('aria-label','切换深色模式');$('theme').onclick=()=>{dark=!dark;document.body.classList.toggle('dark',dark);$('theme').setAttribute('aria-pressed',String(dark));invalidate()};
+$('auto').onchange=e=>{auto=e.target.checked;start=performance.now();invalidate()};
+function toast(text){$('toast').textContent=text;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),2300)}
+$('full').setAttribute('aria-label','切换全屏');$('full').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await $('page').requestFullscreen()}catch{toast('当前浏览器不支持全屏')}};
+canvas.addEventListener('pointerdown',e=>{if(e.button!==0)return;drag=[e.clientX,e.clientY];canvas.setPointerCapture(e.pointerId)});
+canvas.addEventListener('pointermove',e=>{if(!drag)return;target.yaw+=(e.clientX-drag[0])*.007;target.pitch=Math.max(.24,Math.min(1.22,target.pitch+(e.clientY-drag[1])*.004));drag=[e.clientX,e.clientY];invalidate()});for(let ev of ['pointerup','pointercancel'])canvas.addEventListener(ev,()=>{drag=null;start=performance.now()});
+canvas.addEventListener('wheel',e=>{if(W<681)return;e.preventDefault();target.zoom=Math.max(.72,Math.min(1.5,target.zoom-e.deltaY*.0005));invalidate()},{passive:false});
+document.addEventListener('keydown',e=>{if(e.target.matches('input,button'))return;if(e.key==='ArrowRight'){e.preventDefault();change(index+1)}if(e.key==='ArrowLeft'){e.preventDefault();change(index-1)}if(e.code==='Space'){e.preventDefault();$('auto').click()}if(e.key.toLowerCase()==='f')$('full').click()});
+function resize(){let r=canvas.getBoundingClientRect();W=Math.round(r.width);H=Math.round(r.height);let dpr=Math.min(devicePixelRatio||1,2);canvas.width=W*dpr;canvas.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);invalidate()}
+new ResizeObserver(resize).observe(canvas);reduced.addEventListener('change',invalidate);
+$('export').onclick=()=>{let out=document.createElement('canvas');out.width=2400;out.height=1600;let c=out.getContext('2d');draw(c,2400,1450,0,true);let ink=dark?'#a2d9ff':'#0b3ea8',muted=dark?'#aabbd7':'#76828a',bg=dark?'#111e40':'#f7f8f5',d=data[index];c.fillStyle=bg;c.fillRect(0,0,2400,145);c.fillRect(0,1450,2400,150);c.fillStyle=ink;c.font='23px Microsoft YaHei';c.fillText('LOFT49 / 创意城市先行区',108,80);c.font='20px Microsoft YaHei';c.fillText(String(index).padStart(2,'0')+'  '+d[1],108,260);c.font='68px Microsoft YaHei';d[2].split('<br>').forEach((text,i)=>c.fillText(text,108,360+i*90));c.fillStyle=muted;c.font='16px Segoe UI';c.fillText(d[3],108,660);c.font='21px Microsoft YaHei';let rows=[],tmp='';for(let ch of d[4]){if(c.measureText(tmp+ch).width>510){rows.push(tmp);tmp=ch}else tmp+=ch}rows.push(tmp);rows.forEach((text,i)=>c.fillText(text,108,715+i*36));d[5].forEach((s,i)=>{c.fillStyle=ink;c.font='38px Microsoft YaHei';c.fillText(s[0],108+i*183,1050);c.fillStyle=muted;c.font='17px Microsoft YaHei';c.fillText(s[2],108+i*183,1090)});c.fillStyle=muted;c.font='15px Microsoft YaHei';c.fillText('依据 LOFT49 公开折页的概念体块还原；光照与功能配色为设计理念示意。',108,1510);c.fillText('HANGZHOU · LOFT49 / 2026.10',108,1544);out.toBlob(blob=>{if(!blob){toast('导出失败，请重试');return}let url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='LOFT49-信息图-'+String(index).padStart(2,'0')+'.png';a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);toast('已导出 2400 × 1600 PNG')},'image/png')};
+change(0);resize();
+})();
+
+
+</script></body></html>
+
